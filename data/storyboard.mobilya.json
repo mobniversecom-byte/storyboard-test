@@ -3,7 +3,7 @@
   "title": "Ürün Konumlandırma Storyboard'u",
   "subtitle": "Gerçek veri · onaylı kayıtlar ve Opus analizleri",
   "sector_config": "mobilya",
-  "built_at": "2026-11-10T12:42:29.726Z",
+  "built_at": "2026-11-10T15:48:14.439Z",
   "data_mode": "GERÇEK",
   "selection_rule": "sinyal ≥ 3.5, kayıt + fiyat, kategori sınırı {\"koltuk_takimi\":6,\"yemek_odasi\":4,\"dugun_paketi\":3,\"yatak_odasi\":3,\"tv_unitesi\":1}"
  },
@@ -667,7 +667,14 @@
    "inference_ids": [
     "INF-SB-001"
    ],
-   "related_card_ids": []
+   "related_card_ids": [
+    "PRD-0303",
+    "PRD-0306",
+    "PRD-0309",
+    "PRD-0311",
+    "PRD-0317",
+    "PRD-0318"
+   ]
   },
   {
    "id": "cat-yemek_odasi",
@@ -734,7 +741,12 @@
    "inference_ids": [
     "INF-SB-002"
    ],
-   "related_card_ids": []
+   "related_card_ids": [
+    "PRD-0122",
+    "PRD-0014",
+    "PRD-0023",
+    "PRD-0104"
+   ]
   },
   {
    "id": "cat-dugun_paketi",
@@ -801,7 +813,9 @@
    "inference_ids": [
     "INF-SB-003"
    ],
-   "related_card_ids": []
+   "related_card_ids": [
+    "BND-0053"
+   ]
   },
   {
    "id": "cat-yatak_odasi",
@@ -868,7 +882,10 @@
    "inference_ids": [
     "INF-SB-004"
    ],
-   "related_card_ids": []
+   "related_card_ids": [
+    "PRD-0118",
+    "PRD-0012"
+   ]
   },
   {
    "id": "cat-tv_unitesi",
@@ -1040,6 +1057,7 @@
     "INF-SB-009"
    ],
    "related_card_ids": [
+    "cat-koltuk_takimi",
     "PRC-0603",
     "PRC-0632",
     "sig-PRD-0303",
@@ -1715,6 +1733,7 @@
     "INF-SB-013"
    ],
    "related_card_ids": [
+    "cat-koltuk_takimi",
     "PRC-0606",
     "sig-PRD-0306",
     "MED-SB-004",
@@ -2314,6 +2333,7 @@
     "INF-SB-017"
    ],
    "related_card_ids": [
+    "cat-koltuk_takimi",
     "PRC-0609",
     "PRC-0605",
     "sig-PRD-0309",
@@ -2996,6 +3016,7 @@
     "INF-SB-021"
    ],
    "related_card_ids": [
+    "cat-koltuk_takimi",
     "PRC-0611",
     "sig-PRD-0311",
     "MED-SB-010",
@@ -3601,6 +3622,7 @@
     "INF-SB-025"
    ],
    "related_card_ids": [
+    "cat-koltuk_takimi",
     "PRC-0617",
     "sig-PRD-0317",
     "MED-SB-013",
@@ -4199,6 +4221,7 @@
     "INF-SB-029"
    ],
    "related_card_ids": [
+    "cat-koltuk_takimi",
     "PRC-0618",
     "sig-PRD-0318",
     "MED-SB-016",
@@ -4785,6 +4808,7 @@
     "INF-SB-033"
    ],
    "related_card_ids": [
+    "cat-yemek_odasi",
     "PRC-0222",
     "sig-PRD-0122",
     "MED-SB-019",
@@ -5378,6 +5402,7 @@
     "INF-SB-036"
    ],
    "related_card_ids": [
+    "cat-yemek_odasi",
     "PRC-0014",
     "sig-PRD-0014",
     "MED-SB-022",
@@ -5893,6 +5918,7 @@
     "INF-SB-040"
    ],
    "related_card_ids": [
+    "cat-yemek_odasi",
     "PRC-0023",
     "sig-PRD-0023",
     "MED-SB-024",
@@ -6492,6 +6518,7 @@
     "INF-SB-044"
    ],
    "related_card_ids": [
+    "cat-yemek_odasi",
     "PRC-0204",
     "sig-PRD-0104",
     "MED-SB-027",
@@ -7073,6 +7100,7 @@
     "INF-SB-048"
    ],
    "related_card_ids": [
+    "cat-dugun_paketi",
     "PRC-0239",
     "sig-BND-0053",
     "MED-SB-030",
@@ -7668,6 +7696,7 @@
     "INF-SB-050"
    ],
    "related_card_ids": [
+    "cat-yatak_odasi",
     "PRC-0218",
     "sig-PRD-0118",
     "MED-SB-033",
@@ -8119,6 +8148,7 @@
     "INF-SB-053"
    ],
    "related_card_ids": [
+    "cat-yatak_odasi",
     "PRC-0012",
     "PRC-0413",
     "sig-PRD-0012",
@@ -15729,6 +15759,11 @@
  ],
  "links": [
   {
+   "from": "cat-koltuk_takimi",
+   "to": "PRD-0303",
+   "type": "category"
+  },
+  {
    "from": "PRD-0303",
    "to": "PRC-0603",
    "type": "sold_by"
@@ -15789,6 +15824,11 @@
    "type": "positioning"
   },
   {
+   "from": "cat-koltuk_takimi",
+   "to": "PRD-0306",
+   "type": "category"
+  },
+  {
    "from": "PRD-0306",
    "to": "PRC-0606",
    "type": "sold_by"
@@ -15837,6 +15877,11 @@
    "from": "PRD-0306",
    "to": "rec-PRD-0306",
    "type": "positioning"
+  },
+  {
+   "from": "cat-koltuk_takimi",
+   "to": "PRD-0309",
+   "type": "category"
   },
   {
    "from": "PRD-0309",
@@ -15899,6 +15944,11 @@
    "type": "positioning"
   },
   {
+   "from": "cat-koltuk_takimi",
+   "to": "PRD-0311",
+   "type": "category"
+  },
+  {
    "from": "PRD-0311",
    "to": "PRC-0611",
    "type": "sold_by"
@@ -15947,6 +15997,11 @@
    "from": "PRD-0311",
    "to": "rec-PRD-0311",
    "type": "positioning"
+  },
+  {
+   "from": "cat-koltuk_takimi",
+   "to": "PRD-0317",
+   "type": "category"
   },
   {
    "from": "PRD-0317",
@@ -15999,6 +16054,11 @@
    "type": "positioning"
   },
   {
+   "from": "cat-koltuk_takimi",
+   "to": "PRD-0318",
+   "type": "category"
+  },
+  {
    "from": "PRD-0318",
    "to": "PRC-0618",
    "type": "sold_by"
@@ -16047,6 +16107,11 @@
    "from": "PRD-0318",
    "to": "rec-PRD-0318",
    "type": "positioning"
+  },
+  {
+   "from": "cat-yemek_odasi",
+   "to": "PRD-0122",
+   "type": "category"
   },
   {
    "from": "PRD-0122",
@@ -16099,6 +16164,11 @@
    "type": "positioning"
   },
   {
+   "from": "cat-yemek_odasi",
+   "to": "PRD-0014",
+   "type": "category"
+  },
+  {
    "from": "PRD-0014",
    "to": "PRC-0014",
    "type": "sold_by"
@@ -16142,6 +16212,11 @@
    "from": "PRD-0014",
    "to": "rec-PRD-0014",
    "type": "positioning"
+  },
+  {
+   "from": "cat-yemek_odasi",
+   "to": "PRD-0023",
+   "type": "category"
   },
   {
    "from": "PRD-0023",
@@ -16194,6 +16269,11 @@
    "type": "positioning"
   },
   {
+   "from": "cat-yemek_odasi",
+   "to": "PRD-0104",
+   "type": "category"
+  },
+  {
    "from": "PRD-0104",
    "to": "PRC-0204",
    "type": "sold_by"
@@ -16242,6 +16322,11 @@
    "from": "PRD-0104",
    "to": "rec-PRD-0104",
    "type": "positioning"
+  },
+  {
+   "from": "cat-dugun_paketi",
+   "to": "BND-0053",
+   "type": "category"
   },
   {
    "from": "BND-0053",
@@ -16294,6 +16379,11 @@
    "type": "positioning"
   },
   {
+   "from": "cat-yatak_odasi",
+   "to": "PRD-0118",
+   "type": "category"
+  },
+  {
    "from": "PRD-0118",
    "to": "PRC-0218",
    "type": "sold_by"
@@ -16332,6 +16422,11 @@
    "from": "PRD-0118",
    "to": "rec-PRD-0118",
    "type": "positioning"
+  },
+  {
+   "from": "cat-yatak_odasi",
+   "to": "PRD-0012",
+   "type": "category"
   },
   {
    "from": "PRD-0012",

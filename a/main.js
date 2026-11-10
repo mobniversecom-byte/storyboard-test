@@ -104,7 +104,7 @@ function placeSceneMobile(s, ctx) {
 
 function layout(data, config, ctx) {
   const positions = new Map(), frames = [], steps = [];
-  const M = ctx.mobile;
+  const M = false; // telefonda da masaüstü yerleşimi (sonsuz tuval; kullanıcı kararı 2026-11-10)
   const COLS_ = M ? 1 : COLS, FW_ = M ? MFW : FW, GX_ = M ? 0 : GX, GY_ = M ? 160 : GY;
   const placed = data.scenes.map(s => ({ s, ...(M ? placeSceneMobile(s, ctx) : placeScene(s, ctx)) }));
   const nProd = data.scenes.filter(s => s.kind === 'product').length;
