@@ -1,0 +1,306 @@
+{
+  "id": "mobilya",
+  "sector_name": "Mobilya",
+  "locale": "tr",
+  "title": "Ürün Konumlandırma Storyboard'u",
+  "subtitle": "Hangi ürünü, kimden gördük, neden biz de satabiliriz",
+  "currency": "TL",
+  "supply_region": "İnegöl",
+  "categories": [
+    {
+      "id": "koltuk_takimi",
+      "label": "Koltuk takımı",
+      "short": "Koltuk",
+      "color": "#c2553a",
+      "demo_weight": 6,
+      "price": [
+        60000,
+        190000
+      ]
+    },
+    {
+      "id": "yemek_odasi",
+      "label": "Yemek odası",
+      "short": "Yemek",
+      "color": "#2f7d6d",
+      "demo_weight": 5,
+      "price": [
+        45000,
+        140000
+      ]
+    },
+    {
+      "id": "dugun_paketi",
+      "label": "Düğün paketi",
+      "short": "Düğün",
+      "color": "#8a5cc2",
+      "demo_weight": 3,
+      "price": [
+        180000,
+        320000
+      ],
+      "entity": "bundle"
+    },
+    {
+      "id": "yatak_odasi",
+      "label": "Yatak odası",
+      "short": "Yatak",
+      "color": "#2c6db5",
+      "demo_weight": 3,
+      "price": [
+        70000,
+        160000
+      ]
+    },
+    {
+      "id": "tv_unitesi",
+      "label": "TV ünitesi",
+      "short": "TV",
+      "color": "#b58a1e",
+      "demo_weight": 1,
+      "price": [
+        9000,
+        35000
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "id": "budget",
+      "label": "Uygun"
+    },
+    {
+      "id": "mid",
+      "label": "Orta"
+    },
+    {
+      "id": "premium",
+      "label": "Premium"
+    },
+    {
+      "id": "belirsiz",
+      "label": "Belirsiz"
+    }
+  ],
+  "entities": {
+    "product": {
+      "label": "Ürün",
+      "prefix": "PRD"
+    },
+    "bundle": {
+      "label": "Düğün paketi",
+      "prefix": "BND"
+    },
+    "company": {
+      "label": "Satıcı firma",
+      "prefix": "CMP"
+    },
+    "price_observation": {
+      "label": "Fiyat gözlemi",
+      "prefix": "PRC"
+    },
+    "claim": {
+      "label": "Maliyet / tahmin",
+      "prefix": "CLM"
+    },
+    "opportunity": {
+      "label": "Fırsat",
+      "prefix": "OPP"
+    },
+    "collection": {
+      "label": "Koleksiyon önerisi",
+      "prefix": "COL"
+    },
+    "supplier": {
+      "label": "Tedarikçi",
+      "prefix": "SUP"
+    },
+    "research_run": {
+      "label": "Araştırma turu",
+      "prefix": "RESEARCH"
+    },
+    "media": {
+      "label": "Medya",
+      "prefix": "MED"
+    },
+    "inference": {
+      "label": "Çıkarım",
+      "prefix": "INF"
+    }
+  },
+  "product_fields": [
+    {
+      "key": "piece_count",
+      "label": "Parça sayısı",
+      "demo": [
+        "3+3+1",
+        "4 parça",
+        "6 parça",
+        "7 parça",
+        "5 modül"
+      ]
+    },
+    {
+      "key": "dimensions",
+      "label": "Ölçü",
+      "demo": [
+        "330×310 cm",
+        "180×90 cm",
+        "240×100 cm",
+        "160×200 cm"
+      ]
+    },
+    {
+      "key": "material",
+      "label": "Malzeme",
+      "demo": [
+        "Kumaş / masif ayak",
+        "MDF lam",
+        "Ceviz kaplama",
+        "Kadife",
+        "Lake"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "key": "ad_count",
+      "label": "Reklam sayısı"
+    },
+    {
+      "key": "ad_days",
+      "label": "En uzun reklam",
+      "unit": "gün"
+    },
+    {
+      "key": "views",
+      "label": "Video izlenme"
+    },
+    {
+      "key": "engagement",
+      "label": "Etkileşim endeksi"
+    }
+  ],
+  "cost_terms": [
+    {
+      "key": "shipping",
+      "label": "Nakliye"
+    },
+    {
+      "key": "assembly",
+      "label": "Montaj"
+    },
+    {
+      "key": "returns",
+      "label": "İade / hasar payı"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "overview",
+      "kind": "overview",
+      "title": "Pazar özeti",
+      "subtitle": "Kapsam, yöntem ve sınırlar"
+    },
+    {
+      "id": "categories",
+      "kind": "categories",
+      "title": "Kategoriler",
+      "subtitle": "Reklam ve ilgi sinyalleri karşılaştırması"
+    },
+    {
+      "id": "products",
+      "kind": "products",
+      "title": "Seçilen ürünler",
+      "subtitle": "Her ürün kendi sahnesinde"
+    },
+    {
+      "id": "sellers",
+      "kind": "sellers",
+      "title": "Aynı ürünü kim satıyor",
+      "subtitle": "Eşleşme düzeyiyle satıcılar ve fiyatlar"
+    },
+    {
+      "id": "admap",
+      "kind": "admap",
+      "title": "Reklam haritası",
+      "subtitle": "Satıcı × kategori; hücreye tıkla, reklamları gör"
+    },
+    {
+      "id": "economics",
+      "kind": "economics",
+      "title": "Biz neden alıp satabiliriz",
+      "subtitle": "Azami alış fiyatı ve gider oranı (TAHMİN)"
+    },
+    {
+      "id": "positioning",
+      "kind": "positioning",
+      "title": "Sitemizde konumlandırma",
+      "subtitle": "Segment, fiyat bandı, koleksiyon (TİCARİ ÖNERİ)"
+    },
+    {
+      "id": "gaps",
+      "kind": "gaps",
+      "title": "Açık riskler",
+      "subtitle": "BULUNAMADI ve TEKLİF ALINMALI olanlar"
+    }
+  ],
+  "demo": {
+    "seed": 20261110,
+    "products": 18,
+    "companies": 14,
+    "company_pattern": "Örnek Satıcı {n}",
+    "name_pool": [
+      "Vega",
+      "Lina",
+      "Nova",
+      "Rota",
+      "Selin",
+      "Mira",
+      "Teos",
+      "Alva",
+      "Kira",
+      "Pera",
+      "Doru",
+      "Ela",
+      "Sora",
+      "Mavi",
+      "Zen",
+      "Lora",
+      "Neva",
+      "Ayaz",
+      "Defne",
+      "Arya",
+      "Mina",
+      "Tera",
+      "Opal",
+      "Lale"
+    ],
+    "materials": [
+      "Kumaş / masif ayak",
+      "MDF lam",
+      "Ceviz kaplama",
+      "Kadife",
+      "Lake"
+    ],
+    "overview_notes": [
+      "Reklam süresi devamlılık sinyalidir; satış veya başarı kanıtı değildir.",
+      "Etkileşim (beğeni, izlenme) satış adedi anlamına gelmez.",
+      "Satıcının 'üreticiyiz' beyanı üreticilik kanıtı sayılmaz; üretici araştırması ayrıca yapılır.",
+      "Pazaryerleri kapsam dışıdır."
+    ]
+  },
+  "ui": {
+    "demo_banner": "DEMO VERİ — gerçek araştırma değildir",
+    "present": "Sunum",
+    "add_note": "Not ekle",
+    "notes": "Notlar",
+    "drafts": "Taslakları göster",
+    "fit": "Tümünü gör",
+    "help": "Yardım",
+    "open_source": "Kaynağı aç",
+    "why_here": "Neden burada",
+    "evidence": "Kanıt",
+    "user_note": "KULLANICI NOTU"
+  }
+}

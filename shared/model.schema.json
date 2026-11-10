@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "storyboard-model.schema.json",
+  "title": "Storyboard ortak veri modeli (sektörden bağımsız)",
+  "description": "Üç konsept bu modeli kullanır. Gerçek veri bağlanırken data/accepted/*.jsonl kayıtları bu yapıya dönüştürülür; sektöre özgü etiketler config/sector.<ad>.json dosyasından gelir. Kullanıcı notları bu modelde DEĞİLDİR (notes/notes.json).",
+  "type": "object",
+  "required": ["meta", "scenes", "cards", "media", "inferences", "links"],
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "description": "Kanıt standardı alanları (docs/KANIT_STANDARDI.md ile aynı adlar).",
+      "required": ["data_type", "evidence_level", "confidence", "status"],
+      "properties": {
+        "source_url": { "type": ["string", "null"] },
+        "source_ids": { "type": "array", "items": { "type": "string" } },
+        "source_type": { "type": "string" },
+        "accessed_at": { "type": "string" },
+        "last_verified_at": { "type": "string" },
+        "data_type": { "enum": ["DOĞRUDAN_GÖZLEM", "BİRİNCİL_KAYNAK", "İKİNCİL_KAYNAK", "ANALİST_YORUMU", "TAHMİN", "VARSAYIM", "TİCARİ_ÖNERİ"] },
+        "evidence_level": { "enum": ["DOĞRUDAN_DOĞRULANDI", "ÇOKLU_KAYNAK", "DOLAYLI", "ZAYIF", "DOĞRULANAMADI", "BULUNAMADI"] },
+        "confidence": { "enum": ["yüksek", "orta", "düşük"] },
+        "status": { "enum": ["RAW", "REVIEWED", "ACCEPTED", "APPROVED"] },
+        "evidence_note": { "type": "string" },
+        "opus_note": { "type": ["string", "null"] }
+      }
+    },
+    "record_ref": {
+      "type": "object",
+      "description": "Kartın dayandığı araştırma kaydı. entity = config.entities anahtarı (product, company, price_observation, claim, opportunity, collection, supplier, media, inference …).",
+      "required": ["entity", "id"],
+      "properties": { "entity": { "type": "string" }, "id": { "type": "string" }, "version": { "type": "integer" } }
+    },
+    "field": {
+      "type": "object",
+      "required": ["key", "label", "value"],
+      "properties": {
+        "key": { "type": "string" }, "label": { "type": "string" },
+        "value": { "description": "Değer veya durum: BULUNAMADI / TEKLİF_ALINMALI / DOĞRULANAMADI" },
+        "unit": { "type": "string" },
+        "data_type": { "description": "Alan düzeyinde veri türü — bir kartta gözlem ve tahmin yan yana olabilir", "type": "string" },
+        "ref": { "type": "string" }
+      }
+    }
+  },
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": { "title": { "type": "string" }, "sector_config": { "type": "string" }, "built_at": { "type": "string" }, "data_mode": { "enum": ["DEMO", "GERÇEK"] } }
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "order", "kind", "title", "card_ids"],
+        "properties": {
+          "id": { "type": "string" }, "order": { "type": "integer" },
+          "kind": { "description": "config.scenes[].kind veya 'product' (ürün başına sahne)", "type": "string" },
+          "title": { "type": "string" }, "subtitle": { "type": "string" },
+          "card_ids": { "type": "array", "items": { "type": "string" } },
+          "category": { "type": "string" }, "rank": { "type": "integer" }, "parent": { "type": "string" }
+        }
+      }
+    },
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "scene_id", "kind", "record_ref", "title", "evidence"],
+        "properties": {
+          "id": { "type": "string" }, "scene_id": { "type": "string" },
+          "kind": { "enum": ["entity", "metric", "media", "inference", "recommendation", "gap", "text", "matrix"] },
+          "record_ref": { "$ref": "#/$defs/record_ref" },
+          "title": { "type": "string" }, "subtitle": { "type": "string" },
+          "category": { "type": "string" },
+          "big": { "type": "object", "description": "Kartın tek öne çıkan değeri", "properties": { "value": {}, "label": { "type": "string" } } },
+          "fields": { "type": "array", "items": { "$ref": "#/$defs/field" } },
+          "body": { "type": "array", "items": { "type": "string" } },
+          "flags": { "type": "array", "items": { "enum": ["BULUNAMADI", "TEKLİF_ALINMALI", "DOĞRULANAMADI"] } },
+          "evidence": { "$ref": "#/$defs/evidence" },
+          "media_ids": { "type": "array", "items": { "type": "string" } },
+          "inference_ids": { "type": "array", "items": { "type": "string" } },
+          "related_card_ids": { "type": "array", "items": { "type": "string" } },
+          "matrix": { "type": "object", "description": "kind=matrix için: rows, cols, values, ads{'row|col': [reklam]}" }
+        }
+      }
+    },
+    "media": {
+      "type": "array",
+      "description": "İleride eklenecek `media` varlığına birebir eşlenir. Dosya indirilmez; embeds sırayla denenir.",
+      "items": {
+        "type": "object",
+        "required": ["id", "provider", "source_url", "embeds", "cover"],
+        "properties": {
+          "id": { "type": "string" },
+          "provider": { "enum": ["instagram", "meta_ad_library", "youtube", "video", "image", "web"] },
+          "source_url": { "type": "string" },
+          "embeds": { "type": "array", "items": { "type": "object", "properties": { "strategy": { "enum": ["official", "iframe", "direct", "open_only"] }, "url": { "type": "string" }, "type": { "enum": ["video", "image"] } } } },
+          "cover": { "type": "object", "description": "Tuvaldeki kapak = kendi metin kartımız (rakip görseli değil)", "properties": { "title": { "type": "string" }, "date": { "type": "string" }, "label": { "type": "string" } } },
+          "record_ref": { "$ref": "#/$defs/record_ref" },
+          "accessed_at": { "type": "string" }
+        }
+      }
+    },
+    "inferences": {
+      "type": "array",
+      "description": "'Neden burada' / 'Neden seçtik' — daima ANALİST_YORUMU, gözlemden ayrı, dayandığı kartlara bağlı.",
+      "items": {
+        "type": "object",
+        "required": ["id", "data_type", "text", "confidence", "based_on_ids", "target_ids"],
+        "properties": {
+          "id": { "type": "string" }, "data_type": { "const": "ANALİST_YORUMU" }, "text": { "type": "string" },
+          "confidence": { "enum": ["yüksek", "orta", "düşük"] },
+          "based_on_ids": { "type": "array", "items": { "type": "string" } },
+          "target_ids": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": { "type": "object", "required": ["from", "to", "type"], "properties": { "from": { "type": "string" }, "to": { "type": "string" }, "type": { "type": "string" } } }
+    }
+  }
+}

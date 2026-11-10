@@ -1,0 +1,269 @@
+{
+  "id": "ornek-kozmetik",
+  "sector_name": "Kozmetik (örnek sektör — taşınabilirlik testi)",
+  "locale": "tr",
+  "title": "Ürün Konumlandırma Storyboard'u",
+  "subtitle": "Aynı motor, yalnızca config ve veri değişti",
+  "currency": "TL",
+  "supply_region": "Örnek OSB",
+  "categories": [
+    {
+      "id": "cilt_bakimi",
+      "label": "Cilt bakımı",
+      "short": "Cilt",
+      "color": "#c2553a",
+      "demo_weight": 5,
+      "price": [
+        250,
+        1800
+      ]
+    },
+    {
+      "id": "makyaj",
+      "label": "Makyaj",
+      "short": "Makyaj",
+      "color": "#2f7d6d",
+      "demo_weight": 4,
+      "price": [
+        150,
+        1200
+      ]
+    },
+    {
+      "id": "sac_bakimi",
+      "label": "Saç bakımı",
+      "short": "Saç",
+      "color": "#2c6db5",
+      "demo_weight": 3,
+      "price": [
+        120,
+        900
+      ]
+    },
+    {
+      "id": "set_paketleri",
+      "label": "Hediye seti",
+      "short": "Set",
+      "color": "#8a5cc2",
+      "demo_weight": 2,
+      "price": [
+        600,
+        3500
+      ],
+      "entity": "bundle"
+    }
+  ],
+  "segments": [
+    {
+      "id": "budget",
+      "label": "Ekonomik"
+    },
+    {
+      "id": "mid",
+      "label": "Orta"
+    },
+    {
+      "id": "premium",
+      "label": "Lüks"
+    },
+    {
+      "id": "belirsiz",
+      "label": "Belirsiz"
+    }
+  ],
+  "entities": {
+    "product": {
+      "label": "Ürün",
+      "prefix": "PRD"
+    },
+    "bundle": {
+      "label": "Set",
+      "prefix": "BND"
+    },
+    "company": {
+      "label": "Satıcı marka",
+      "prefix": "CMP"
+    },
+    "price_observation": {
+      "label": "Fiyat gözlemi",
+      "prefix": "PRC"
+    },
+    "claim": {
+      "label": "Maliyet / tahmin",
+      "prefix": "CLM"
+    },
+    "opportunity": {
+      "label": "Fırsat",
+      "prefix": "OPP"
+    },
+    "collection": {
+      "label": "Seri önerisi",
+      "prefix": "COL"
+    },
+    "supplier": {
+      "label": "Fason üretici",
+      "prefix": "SUP"
+    },
+    "research_run": {
+      "label": "Araştırma turu",
+      "prefix": "RESEARCH"
+    },
+    "media": {
+      "label": "Medya",
+      "prefix": "MED"
+    },
+    "inference": {
+      "label": "Çıkarım",
+      "prefix": "INF"
+    }
+  },
+  "product_fields": [
+    {
+      "key": "volume",
+      "label": "Hacim",
+      "demo": [
+        "30 ml",
+        "50 ml",
+        "100 ml",
+        "250 ml"
+      ]
+    },
+    {
+      "key": "skin_type",
+      "label": "Cilt tipi",
+      "demo": [
+        "Karma",
+        "Kuru",
+        "Hassas",
+        "Tüm cilt tipleri"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "key": "ad_count",
+      "label": "Reklam sayısı"
+    },
+    {
+      "key": "ad_days",
+      "label": "En uzun reklam",
+      "unit": "gün"
+    },
+    {
+      "key": "views",
+      "label": "Video izlenme"
+    },
+    {
+      "key": "engagement",
+      "label": "Etkileşim endeksi"
+    }
+  ],
+  "cost_terms": [
+    {
+      "key": "shipping",
+      "label": "Kargo"
+    },
+    {
+      "key": "sample",
+      "label": "Numune"
+    },
+    {
+      "key": "returns",
+      "label": "İade payı"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "overview",
+      "kind": "overview",
+      "title": "Pazar özeti",
+      "subtitle": "Kapsam, yöntem ve sınırlar"
+    },
+    {
+      "id": "categories",
+      "kind": "categories",
+      "title": "Kategoriler",
+      "subtitle": "Sinyal karşılaştırması"
+    },
+    {
+      "id": "products",
+      "kind": "products",
+      "title": "Seçilen ürünler",
+      "subtitle": "Her ürün kendi sahnesinde"
+    },
+    {
+      "id": "sellers",
+      "kind": "sellers",
+      "title": "Aynı ürünü kim satıyor",
+      "subtitle": "Eşleşme düzeyiyle"
+    },
+    {
+      "id": "admap",
+      "kind": "admap",
+      "title": "Reklam haritası",
+      "subtitle": "Marka × kategori"
+    },
+    {
+      "id": "economics",
+      "kind": "economics",
+      "title": "Birim ekonomisi",
+      "subtitle": "TAHMİN"
+    },
+    {
+      "id": "positioning",
+      "kind": "positioning",
+      "title": "Konumlandırma",
+      "subtitle": "TİCARİ ÖNERİ"
+    },
+    {
+      "id": "gaps",
+      "kind": "gaps",
+      "title": "Açık riskler",
+      "subtitle": "Eksik ve doğrulanamayanlar"
+    }
+  ],
+  "demo": {
+    "seed": 77,
+    "products": 14,
+    "companies": 10,
+    "company_pattern": "Örnek Marka {n}",
+    "name_pool": [
+      "Aura",
+      "Glow",
+      "Velvet",
+      "Pure",
+      "Bloom",
+      "Silk",
+      "Nectar",
+      "Dew",
+      "Halo",
+      "Iris",
+      "Luma",
+      "Pearl",
+      "Rose",
+      "Sage"
+    ],
+    "materials": [
+      "Doğal içerik",
+      "Vegan",
+      "Parfümsüz"
+    ],
+    "overview_notes": [
+      "Reklam süresi devamlılık sinyalidir; satış kanıtı değildir.",
+      "Etkileşim satış adedi anlamına gelmez."
+    ]
+  },
+  "ui": {
+    "demo_banner": "DEMO VERİ — örnek sektör, gerçek araştırma değildir",
+    "present": "Sunum",
+    "add_note": "Not ekle",
+    "notes": "Notlar",
+    "drafts": "Taslakları göster",
+    "fit": "Tümünü gör",
+    "help": "Yardım",
+    "open_source": "Kaynağı aç",
+    "why_here": "Neden burada",
+    "evidence": "Kanıt",
+    "user_note": "KULLANICI NOTU"
+  }
+}
